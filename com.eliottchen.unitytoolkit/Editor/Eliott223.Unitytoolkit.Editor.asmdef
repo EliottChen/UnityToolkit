@@ -1,0 +1,10 @@
+{
+    "name": "Eliott223.Unitytoolkit.Editor",
+    "references": [
+      "Eliott223.Unitytoolkit"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}

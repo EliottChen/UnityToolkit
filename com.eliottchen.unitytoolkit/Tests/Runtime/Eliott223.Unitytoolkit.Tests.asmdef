@@ -1,0 +1,11 @@
+{
+    "name": "Eliott223.Unitytoolkit.Tests",
+    "references": [
+        "Eliott223.Unitytoolkit"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": []
+}

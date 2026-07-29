@@ -1,0 +1,14 @@
+{
+    "name": "Eliott223.Unitytoolkit.Editor.Tests",
+    "references": [
+        "Eliott223.Unitytoolkit.Editor",
+        "Eliott223.Unitytoolkit"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}
