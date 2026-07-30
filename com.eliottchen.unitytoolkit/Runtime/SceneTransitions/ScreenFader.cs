@@ -24,9 +24,12 @@ namespace EliottChen.SceneTransitions
         private CanvasGroup canvasGroup;
         private Coroutine activeFadeRoutine;
 
-        // Bootstraps the singleton before any scene loads, no manual setup needed.
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-        private static void Bootstrap()
+        /// <summary>
+        /// Called to create a new <see cref="ScreenFader"/> component and adds it automatically
+        /// to the <see cref="UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)"/>'s scene pools.
+        /// Calling <see cref="Bootstrap"/> is safe (will be skipped if the instance already exist)
+        /// </summary>
+        public static void Bootstrap()
         {
             if (Instance != null)
                 return;
@@ -64,12 +67,27 @@ namespace EliottChen.SceneTransitions
         }
 
         /// <summary>
+        /// Jump the alpha value of the canvas to the input parameters.
+        /// Calling this will cut all Coroutines that <see cref="FadeOut(float, Action)"/> or <see cref=" FadeToBlack(float, Action)"/>
+        /// may have started.
+        /// </summary>
+        /// <param name="alpha"> alpha value of the black screen, 0: transparent, 1: full opaque</param>
+        public static void SetAlpha(float alpha)
+        {
+            if (Instance == null)
+                Bootstrap();
+            Instance.SetAlphaAndCutCoroutine(alpha);
+        }
+
+        /// <summary>
         /// Fades the screen to black (alpha 0 -> 1).
         /// </summary>
         /// <param name="inTime"> Time required for the screen going completely transparent, set to 0 For instant fading.</param>
         /// <param name="onComplete">Optional callback fired once fully black.</param>
         static public Coroutine FadeOut(float inTime = 0f, Action onComplete = null)
         {
+            if (Instance == null)
+                Bootstrap();
             return Instance.StartFade(0f, inTime, onComplete);
         }
 
@@ -80,7 +98,17 @@ namespace EliottChen.SceneTransitions
         /// <param name="onComplete">Optional callback fired once fully transparent.</param>
         static public Coroutine FadeToBlack(float inTime, Action onComplete = null)
         {
+            if (Instance == null)
+                Bootstrap();
             return Instance.StartFade(1f, inTime, onComplete);
+        }
+
+        private void SetAlphaAndCutCoroutine(float alpha)
+        {
+            if(activeFadeRoutine != null)
+                StopCoroutine(activeFadeRoutine);
+            
+            canvasGroup.alpha = alpha;
         }
 
         private Coroutine StartFade(float targetAlpha, float inTime, Action onComplete)
@@ -123,6 +151,14 @@ namespace EliottChen.SceneTransitions
 
             Debug.Log("Coroutine ended", this);
             yield break;
+        }
+
+        private void OnDestroy()
+        {
+            if(Instance != null && Instance == this)
+            {
+                Instance = null;
+            }
         }
     }
 }
