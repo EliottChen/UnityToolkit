@@ -11,7 +11,7 @@
   [
         {
             "displayName": "TextMeshPro Support",
-            "description": "Adds TMP integration for labels and UI bindings",
+            "description": "Adds components that rely on TextMeshPro integration",
             "path": "Samples~/TMPSupport"
         }
       ]
