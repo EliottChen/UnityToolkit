@@ -1,3 +1,4 @@
+#if UNITY_UIGUI_PRESENT
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,3 +31,4 @@ namespace EliottChen.SceneTransitions
         }
     }
 }
+#endif

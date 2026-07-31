@@ -1,3 +1,4 @@
+#if UNITY_UIGUI_PRESENT
 using System;
 using System.Collections;
 using UnityEngine;
@@ -105,9 +106,9 @@ namespace EliottChen.SceneTransitions
 
         private void SetAlphaAndCutCoroutine(float alpha)
         {
-            if(activeFadeRoutine != null)
+            if (activeFadeRoutine != null)
                 StopCoroutine(activeFadeRoutine);
-            
+
             canvasGroup.alpha = alpha;
         }
 
@@ -126,9 +127,9 @@ namespace EliottChen.SceneTransitions
         {
             // Blocks input while the overlay is at all visible, so nothing behind it is clickable mid-transition.
             canvasGroup.blocksRaycasts = true;
-            
+
             // Set the opacity depending on speed
-            if(inTime == 0f)
+            if (inTime == 0f)
             {
                 canvasGroup.alpha = targetAlpha;
             }
@@ -155,10 +156,11 @@ namespace EliottChen.SceneTransitions
 
         private void OnDestroy()
         {
-            if(Instance != null && Instance == this)
+            if (Instance != null && Instance == this)
             {
                 Instance = null;
             }
         }
     }
 }
+#endif
