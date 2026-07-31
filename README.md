@@ -1,3 +1,6 @@
-# UnityToolkit
+A Unity Utility package, contains all the necessaries things to make a game but not enough to have its dedicated package.
 
-This repository contains a core scripting API to create and maintain other tools.
+# Feature
+- Game events and listener using Scriptable Object architecture
+- Simple Screen Fade controller
+- Showing Unity Version 

@@ -9,6 +9,13 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": [],
+    "versionDefines": [
+        
+        {
+            "name": "com.unity.ugui",
+            "expression": "",
+            "define": "UNITY_UIGUI_PRESENT"
+        }
+    ],
     "noEngineReferences": false
 }

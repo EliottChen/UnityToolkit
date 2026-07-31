@@ -207,7 +207,6 @@ StyleCopReport.xml
 *_p.c
 *_h.h
 *.ilk
-*.meta
 *.obj
 *.idb
 *.iobj
@@ -369,8 +368,6 @@ _pkginfo.txt
 
 # Others
 ClientBin/
-~$*
-*~
 *.dbmdl
 *.dbproj.schemaview
 *.jfm
