@@ -6,5 +6,13 @@
   "description": "Simple Utility Package that contains utilitarian script to make a game using Unity",
   "author": {
     "name": "EliottChen"
-  }
+  },
+  "samples": 
+  [
+        {
+            "displayName": "TextMeshPro Support",
+            "description": "Adds TMP integration for labels and UI bindings",
+            "path": "Samples~/TMPSupport"
+        }
+      ]
 }
