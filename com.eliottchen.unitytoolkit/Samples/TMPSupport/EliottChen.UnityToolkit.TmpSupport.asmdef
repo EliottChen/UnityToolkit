@@ -1,0 +1,27 @@
+{
+    "name": "EliottChen.UnityToolkit.TmpSupport",
+    "rootNamespace": "EliottChen",
+    "references": [
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.textmeshpro",
+            "expression": "",
+            "define": "LEGACY_TMP"
+        },
+        {
+            "name": "com.unity.ugui",
+            "expression": "2.0.0",
+            "define": "UNITY6_TMP"
+        }
+    ],
+    "noEngineReferences": false
+}
