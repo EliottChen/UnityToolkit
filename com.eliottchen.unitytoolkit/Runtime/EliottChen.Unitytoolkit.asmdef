@@ -1,9 +1,7 @@
 {
     "name": "EliottChen.Unitytoolkit",
     "rootNamespace": "EliottChen",
-    "references": [
-        "Unity.TextMeshPro"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
@@ -12,16 +10,7 @@
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [
-        {
-            "name": "com.unity.textmeshpro",
-            "expression": "",
-            "define": "LEGACY_TMP"
-        },
-        {
-            "name": "com.unity.ugui",
-            "expression": "2.0.0",
-            "define": "UNITY6_TMP"
-        },
+        
         {
             "name": "com.unity.ugui",
             "expression": "",
